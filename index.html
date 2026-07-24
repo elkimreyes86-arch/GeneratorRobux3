@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robux Generator 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap');
+        body {
+            margin: 0;
+            padding: 20px 0;
+            background: linear-gradient(180deg, #4a9eff, #0066cc);
+            font-family: Arial, sans-serif;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-card {
+            background: #1e88e5;
+            width: 90%;
+            max-width: 420px;
+            border-radius: 30px;
+            padding: 35px 25px 180px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            text-align: center;
+            position: relative;
+        }
+        .rocket { font-size: 60px; margin-bottom: 10px; }
+        h1 { font-size: 32px; margin: 10px 0; }
+        .subtitle { font-size: 18px; margin: 20px 0; line-height: 1.4; }
+        input {
+            width: 100%;
+            padding: 16px;
+            margin: 12px 0;
+            border: none;
+            border-radius: 15px;
+            font-size: 17px;
+            background: white;
+            color: #222;
+        }
+        button {
+            width: 100%;
+            padding: 18px;
+            background: #ffeb3b;
+            color: #000;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 15px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        button:hover { background: #fff200; }
+        #result { margin-top: 20px; font-size: 20px; min-height: 70px; }
+
+        /* UGC Bottom Panel */
+        .ugc-panel {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #111;
+            width: 90%;
+            max-width: 380px;
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+        .ugc-title { color: #4a9eff; font-size: 20px; margin-bottom: 10px; text-align: left; }
+        .ugc-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+            font-size: 17px;
+        }
+        .ugc-price { color: #00ff9d; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="main-card">
+        <div class="rocket">🚀</div>
+        <h1>Robux Generator<br>2026</h1>
+        <p class="subtitle">Enter your Roblox username<br>and get up to 1,000,000 Robux instantly!</p>
+        
+        <input type="text" id="username" placeholder="Roblox Username" required>
+        <input type="number" id="amount" placeholder="Amount of Robux" value="50000">
+        
+        <button onclick="generateRobux()">Generate Robux Now</button>
+        
+        <div id="result"></div>
+        
+        <!-- UGC Prices Panel -->
+        <div class="ugc-panel">
+            <div class="ugc-title">UGC Prices</div>
+            <div class="ugc-item"><span>Galaxy</span><span class="ugc-price">1K Robux</span></div>
+            <div class="ugc-item"><span>Corgi</span><span class="ugc-price">600 Robux</span></div>
+            <div class="ugc-item"><span>Handheart</span><span class="ugc-price">700 Robux</span></div>
+            <div class="ugc-item"><span>Gloves</span><span class="ugc-price">800 Robux</span></div>
+            <div class="ugc-item"><span>Cowboy Hat</span><span class="ugc-price">200 Robux</span></div>
+            <div class="ugc-item"><span>Money Gun</span><span class="ugc-price">500 Robux</span></div>
+        </div>
+    </div>
+
+    <script>
+        function generateRobux() {
+            const username = document.getElementById('username').value.trim();
+            const amount = document.getElementById('amount').value;
+            const result = document.getElementById('result');
+            
+            if (!username) {
+                result.innerHTML = "Please enter a username!";
+                return;
+            }
+            
+            result.innerHTML = `Sending ${amount} Robux to <strong>${username}</strong>...`;
+            
+            setTimeout(() => {
+                result.innerHTML = `
+                    ✅ <strong>Success!</strong><br>
+                    ${amount} Robux sent to <strong>${username}</strong>!<br>
+                    <span style="color:#ffd700">Transaction complete. Check your account.</span>
+                `;
+            }, 1700);
+        }
+    </script>
+</body>
+</html>
